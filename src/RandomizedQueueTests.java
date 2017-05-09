@@ -1,33 +1,23 @@
 import static org.junit.Assert.*;
 
+import java.util.Iterator;
+
 import org.junit.Test;
 
 public class RandomizedQueueTests {
 
 	@Test
-	public void intialSizeShouldBe0() {
+	public void testStack(){
 		RandomizedQueue<Integer> rq = new RandomizedQueue<>();
+		for(int i = 1; i <= 1000; i++){
+			rq.enqueue(i);
+		}
 		
-		assertEquals(0, rq.size());
+		int i = 1;
+		while(rq.size() > 0){
+			System.out.println(i++ + ": " + rq.dequeue());
+		}
 	}
 	
-	@Test
-	public void insert10ShouldBeSize10() {
-		RandomizedQueue<Integer> rq = new RandomizedQueue<>();
-		for(int i = 1; i <= 10; i++){
-			rq.enqueue(i);
-		}
-		assertEquals(10, rq.size());
-	}
-	
-	@Test
-	public void testSample(){
-		RandomizedQueue<Integer> rq = new RandomizedQueue<>();
-		for(int i = 1; i <= 10; i++){
-			rq.enqueue(i);
-		}
-		System.out.println(rq.toString());
-		assertTrue(true);
-	}
 
 }
